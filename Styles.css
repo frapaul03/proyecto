@@ -1,3 +1,6 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 /* --- Reset Básico y Estilos Globales --- */
 * {
     margin: 0;
@@ -6,26 +9,27 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    font-family: 'Lato', sans-serif; /* Fuente actualizada */
+    line-height: 1.7; /* Ligeramente más espaciado */
+    color: #495057; /* Gris oscuro para texto */
+    background-color: #f8f9fa; /* Gris muy claro de fondo */
 }
 
 .container {
     width: 90%;
     max-width: 1100px;
     margin: auto;
-    overflow: hidden; /* Clear floats */
 }
 
 a {
-    color: #0056b3;
+    color: #007bff; /* Azul suave para enlaces */
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    text-decoration: none; /* Quitamos subrayado por defecto */
 }
 
 ul {
@@ -34,8 +38,12 @@ ul {
 
 h1, h2, h3 {
     margin-bottom: 0.8em;
-    color: #2c3e50;
+    color: #343a40; /* Gris más oscuro para títulos */
+    font-weight: 400; /* Peso normal para un look más limpio */
 }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+
 
 img {
     max-width: 100%;
@@ -45,10 +53,11 @@ img {
 
 /* --- Header --- */
 header {
-    background: #3498db;
-    color: #fff;
+    background: #ffffff; /* Fondo blanco */
+    color: #343a40; /* Texto oscuro */
     padding: 1rem 0;
-    border-bottom: #2980b9 3px solid;
+    border-bottom: 1px solid #e9ecef; /* Borde inferior muy sutil */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Sombra muy sutil */
 }
 
 header .container {
@@ -57,9 +66,17 @@ header .container {
     align-items: center;
 }
 
+header h1 {
+    margin-bottom: 0; /* Quitamos margen inferior del H1 */
+    font-weight: 700; /* Más peso para el título principal */
+}
+
 header h1 a {
-    color: #fff;
+    color: #343a40; /* Texto oscuro para el título */
     text-decoration: none;
+}
+header h1 a:hover {
+    color: #007bff;
 }
 
 header nav ul {
@@ -67,186 +84,234 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 1.5rem;
+    margin-left: 1.8rem; /* Un poco más de espacio */
 }
 
 header nav ul li a {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
+    color: #495057; /* Texto gris oscuro para nav */
+    text-transform: none; /* Quitamos mayúsculas */
+    font-weight: 400; /* Peso normal */
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent; /* Espacio para borde en hover */
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 
 header nav ul li a:hover {
-    color: #ecf0f1;
+    color: #007bff; /* Azul suave al pasar el mouse */
+    border-bottom-color: #007bff; /* Borde aparece al pasar el mouse */
     text-decoration: none;
 }
 
 /* --- Hero Section --- */
 .hero {
-    background: #2c3e50;
-    color: #fff;
+    background: #e9ecef; /* Gris claro diferente al body */
+    color: #343a40; /* Texto oscuro */
     padding: 4rem 0;
     text-align: center;
+    border-bottom: 1px solid #dee2e6; /* Separador sutil */
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5em;
-    color: #fff;
+    color: #343a40;
+    font-weight: 300; /* Más ligero */
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5em;
+    font-size: 1.1rem;
+    margin-bottom: 1.8em;
+    color: #6c757d; /* Gris un poco más claro */
+    max-width: 600px; /* Limita ancho del párrafo */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-button {
     display: inline-block;
-    background: #e67e22;
+    background: #007bff; /* Azul suave */
     color: #fff;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px; /* Bordes más redondeados */
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: none; /* Sin mayúsculas */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
-    background: #d35400;
+    background: #0056b3; /* Azul más oscuro */
     text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* --- Main Content & Grid --- */
 main {
-    padding: 2rem 0;
+    padding: 3rem 0; /* Más padding vertical */
 }
 
 .filtros {
-    background-color: #fff;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 1rem 1.5rem; /* Más padding */
+    margin-bottom: 2.5rem; /* Más espacio abajo */
+    border-radius: 6px; /* Bordes ligeramente redondeados */
+    border: 1px solid #e9ecef; /* Borde sutil */
+    display: flex; /* Alineación horizontal */
+    align-items: center;
+    gap: 1rem; /* Espacio entre elementos */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03); /* Sombra mínima */
 }
 
 .filtros label {
     margin-right: 0.5rem;
-    font-weight: bold;
+    font-weight: 700; /* Negrita */
+    color: #495057;
 }
 
 .filtros select,
 .filtros input[type="search"] {
-    padding: 0.5rem;
-    margin-right: 1rem;
-    border: 1px solid #ccc;
+    padding: 0.6rem 0.8rem; /* Padding interno */
+    border: 1px solid #ced4da; /* Borde gris claro */
     border-radius: 4px;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Input de búsqueda ocupa espacio disponible */
+}
+.filtros select {
+    flex-grow: 0; /* Select no crece */
 }
 
+.filtros input[type="search"] {
+    max-width: 300px; /* Limita ancho del buscador */
+}
+
+.filtros select:focus,
+.filtros input[type="search"]:focus {
+    outline: none;
+    border-color: #80bdff; /* Borde azul al enfocar */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Resplandor suave */
+}
 
 .grid-emprendimientos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive Grid */
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste tamaño mínimo */
+    gap: 2rem; /* Más espacio entre tarjetas */
 }
 
 .card-emprendimiento {
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: hidden; /* Ensure image corners are rounded if needed */
-    transition: transform 0.2s ease-in-out;
+    border: 1px solid #e9ecef; /* Borde sutil */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04); /* Sombra muy sutil */
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out; /* Transición suave de sombra */
 }
 
 .card-emprendimiento:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra más pronunciada al pasar */
+    /* transform: translateY(-5px); quitamos el movimiento */
 }
 
 .card-emprendimiento img {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Cover the area without distortion */
+    height: 220px; /* Altura ligeramente mayor */
+    object-fit: cover;
 }
 
 .card-content {
-    padding: 1rem;
+    padding: 1.5rem; /* Más padding interno */
 }
 
 .card-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.3em;
+    font-size: 1.25rem; /* Ligeramente más grande */
+    margin-bottom: 0.4em;
+    font-weight: 700;
 }
 
 .emprendedor-nombre {
     font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.8em;
+    color: #6c757d; /* Gris */
+    margin-bottom: 1em; /* Más espacio */
 }
 
 .descripcion-corta {
     font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 1em;
-     /* Limit description lines (optional) */
+    color: #495057;
+    margin-bottom: 1.2em;
+    /* Limit description lines (optional) */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-height: 1.6; /* Asegura buena legibilidad */
 }
 
 .valoracion {
     font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 1em;
+    color: #6c757d;
+    margin-bottom: 1.2em;
+    display: flex; /* Para alinear estrellas y texto */
+    align-items: center;
 }
-.valoracion span {
-    color: #f39c12; /* Star color */
+.valoracion span:first-child { /* Estrellas */
+    color: #ffc107; /* Amarillo/oro para estrellas */
     font-size: 1.1rem;
+    margin-right: 0.4em; /* Espacio entre estrellas y texto */
+}
+.valoracion .opiniones {
+    font-size: 0.85rem;
 }
 
 
 .ver-mas {
     display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
+    background-color: transparent; /* Sin fondo */
+    color: #007bff; /* Color azul */
+    padding: 0.5rem 0; /* Solo padding vertical */
     border-radius: 4px;
     font-size: 0.9rem;
+    font-weight: 700;
     text-align: center;
+    border: 1px solid transparent; /* Borde invisible para mantener tamaño */
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .ver-mas:hover {
-    background-color: #2980b9;
-    text-decoration: none;
+    color: #0056b3; /* Azul más oscuro */
+    text-decoration: underline; /* Subrayado en hover */
+    background-color: transparent;
 }
 
 /* --- Footer --- */
 footer {
-    background: #2c3e50;
-    color: #ccc;
+    background: #343a40; /* Fondo gris oscuro */
+    color: #adb5bd; /* Texto gris claro */
     text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
+    padding: 2rem 0; /* Más padding */
+    margin-top: 3rem; /* Más espacio arriba */
+    font-size: 0.9rem;
 }
 
 footer ul {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 
 footer ul li {
     display: inline;
-    margin: 0 0.8rem;
+    margin: 0 1rem;
 }
 
 footer ul li a {
-    color: #ccc;
+    color: #adb5bd;
 }
 
 footer ul li a:hover {
-    color: #fff;
+    color: #ffffff; /* Blanco al pasar el mouse */
+    text-decoration: underline;
 }
 
 
-/* --- Media Queries (Ejemplo básico para mejorar responsividad) --- */
+/* --- Media Queries (Ajustes menores pueden ser necesarios) --- */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -259,23 +324,33 @@ footer ul li a:hover {
     }
 
     header nav ul li {
-        margin: 0 0.8rem;
+        margin: 0 1rem; /* Ajuste margen */
     }
 
     .hero h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    .filtros {
+        flex-direction: column;
+        align-items: stretch; /* Elementos ocupan todo el ancho */
+    }
+     .filtros input[type="search"] {
+        max-width: none; /* Ancho completo en móvil */
     }
 }
 
 @media (max-width: 480px) {
-    .filtros {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
+     .grid-emprendimientos {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 1.5rem;
+     }
+     header nav ul li {
+        margin: 0 0.6rem; /* Menos margen en móvil */
     }
-    .filtros select,
-    .filtros input[type="search"] {
-        width: 100%;
-        margin-right: 0;
+    .hero {
+        padding: 3rem 0;
+    }
+    main {
+        padding: 2rem 0;
     }
 }
