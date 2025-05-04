@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendimientos Locales - Inicio</title>
+    <link rel="stylesheet" href="Styles.css">
+    </head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Emprendimientos Locales</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#explorar">Explorar</a></li>
+                    <li><a href="#registrar">Registrar Emprendimiento</a></li>
+                    <li><a href="#login">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Descubre y apoya a los emprendedores de tu comunidad</h2>
+            <p>Una plataforma para conectar talento local con clientes como tú.</p>
+            <a href="#explorar" class="cta-button">Ver Emprendimientos</a>
+        </div>
+    </section>
+
+    <main id="explorar" class="container">
+        <h2>Emprendimientos Destacados</h2>
+
+        <div class="filtros">
+            <label for="categoria">Filtrar por Categoría:</label>
+            <select name="categoria" id="categoria">
+                <option value="todos">Todas</option>
+                <option value="comida">Comida</option>
+                <option value="artesania">Artesanía</option>
+                <option value="servicios">Servicios</option>
+                </select>
+            <input type="search" placeholder="Buscar por nombre...">
+        </div>
+
+        <div class="grid-emprendimientos">
+            <article class="card-emprendimiento">
+                <img src="https://via.placeholder.com/300x200?text=Producto+1" alt="Nombre del Producto/Servicio 1">
+                <div class="card-content">
+                    <h3>Nombre del Producto/Servicio 1</h3>
+                    <p class="emprendedor-nombre">Por: Nombre del Emprendedor A</p>
+                    <p class="descripcion-corta">Pequeña descripción del producto o servicio ofrecido...</p>
+                    <div class="valoracion">
+                        <span>★★★★☆</span> (15 opiniones)
+                    </div>
+                    <a href="#" class="ver-mas">Ver Más</a>
+                </div>
+            </article>
+
+            <article class="card-emprendimiento">
+                <img src="https://via.placeholder.com/300x200?text=Producto+2" alt="Nombre del Producto/Servicio 2">
+                <div class="card-content">
+                    <h3>Nombre del Producto/Servicio 2</h3>
+                    <p class="emprendedor-nombre">Por: Nombre del Emprendedor B</p>
+                    <p class="descripcion-corta">Otra descripción interesante de lo que se ofrece aquí...</p>
+                    <div class="valoracion">
+                        <span>★★★★★</span> (8 opiniones)
+                    </div>
+                    <a href="#" class="ver-mas">Ver Más</a>
+                </div>
+            </article>
+
+             <article class="card-emprendimiento">
+                <img src="https://via.placeholder.com/300x200?text=Servicio+X" alt="Nombre del Servicio X">
+                <div class="card-content">
+                    <h3>Nombre del Servicio X</h3>
+                    <p class="emprendedor-nombre">Por: Nombre del Emprendedor C</p>
+                    <p class="descripcion-corta">Descripción del servicio profesional ofrecido...</p>
+                     <div class="valoracion">
+                        <span>★★★☆☆</span> (5 opiniones)
+                    </div>
+                    <a href="#" class="ver-mas">Ver Más</a>
+                </div>
+            </article>
+            </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Plataforma Emprendimientos Locales. Todos los derechos reservados.</p>
+            <ul>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    </body>
+</html>
