@@ -48,14 +48,14 @@ h3 { font-size: 1.3rem; }
 img {
     max-width: 100%;
     height: auto;
-    display: block;
+    display: block; /* Changed from inline to block for better control */
 }
 
 /* --- Header --- */
 header {
     background: #ffffff; /* Fondo blanco */
     color: #343a40; /* Texto oscuro */
-    padding: 1rem 0;
+    padding: 0.8rem 0; /* Ajuste ligero del padding */
     border-bottom: 1px solid #e9ecef; /* Borde inferior muy sutil */
     box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Sombra muy sutil */
 }
@@ -63,21 +63,22 @@ header {
 header .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Alinea verticalmente logo y nav */
 }
 
+/* Estilos para el contenedor del logo (H1) */
 header h1 {
     margin-bottom: 0; /* Quitamos margen inferior del H1 */
-    font-weight: 700; /* Más peso para el título principal */
+    line-height: 1; /* Evita espacio extra por altura de línea */
 }
 
-header h1 a {
-    color: #343a40; /* Texto oscuro para el título */
-    text-decoration: none;
+/* Estilos para la imagen del logo */
+.logo-img {
+  max-height: 50px; /* Altura máxima del logo, ajustable */
+  width: auto; /* Mantiene la proporción */
+  vertical-align: middle; /* Ayuda a alinear si hay texto cerca */
 }
-header h1 a:hover {
-    color: #007bff;
-}
+
 
 header nav ul {
     display: flex;
@@ -96,11 +97,17 @@ header nav ul li a {
     transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 
-header nav ul li a:hover {
-    color: #007bff; /* Azul suave al pasar el mouse */
-    border-bottom-color: #007bff; /* Borde aparece al pasar el mouse */
+header nav ul li a:hover,
+header nav ul li a.active { /* Estilo para hover y active */
+    color: #007bff; /* Azul suave al pasar el mouse o si está activo */
+    border-bottom-color: #007bff; /* Borde aparece al pasar el mouse o si está activo */
     text-decoration: none;
 }
+/* Opcional: Hacer el enlace activo un poco más grueso */
+header nav ul li a.active {
+    font-weight: 700;
+}
+
 
 /* --- Hero Section --- */
 .hero {
@@ -158,6 +165,7 @@ main {
     border-radius: 6px; /* Bordes ligeramente redondeados */
     border: 1px solid #e9ecef; /* Borde sutil */
     display: flex; /* Alineación horizontal */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea en pantallas pequeñas */
     align-items: center;
     gap: 1rem; /* Espacio entre elementos */
     box-shadow: 0 1px 3px rgba(0,0,0,0.03); /* Sombra mínima */
@@ -167,6 +175,7 @@ main {
     margin-right: 0.5rem;
     font-weight: 700; /* Negrita */
     color: #495057;
+    flex-shrink: 0; /* Evita que la etiqueta se encoja */
 }
 
 .filtros select,
@@ -179,10 +188,12 @@ main {
 }
 .filtros select {
     flex-grow: 0; /* Select no crece */
+    min-width: 150px; /* Ancho mínimo para el select */
 }
 
 .filtros input[type="search"] {
     max-width: 300px; /* Limita ancho del buscador */
+    min-width: 200px; /* Ancho mínimo */
 }
 
 .filtros select:focus,
@@ -205,21 +216,25 @@ main {
     box-shadow: 0 1px 3px rgba(0,0,0,0.04); /* Sombra muy sutil */
     overflow: hidden;
     transition: box-shadow 0.3s ease-in-out; /* Transición suave de sombra */
+    display: flex; /* Para mejor control del contenido interno */
+    flex-direction: column; /* Apila imagen y contenido */
 }
 
 .card-emprendimiento:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra más pronunciada al pasar */
-    /* transform: translateY(-5px); quitamos el movimiento */
 }
 
 .card-emprendimiento img {
     width: 100%;
-    height: 220px; /* Altura ligeramente mayor */
-    object-fit: cover;
+    height: 220px; /* Altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
 }
 
 .card-content {
     padding: 1.5rem; /* Más padding interno */
+    flex-grow: 1; /* Permite que el contenido crezca para llenar espacio si es necesario */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido verticalmente */
 }
 
 .card-content h3 {
@@ -244,14 +259,17 @@ main {
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: 1.6; /* Asegura buena legibilidad */
+    flex-grow: 1; /* Hace que la descripción ocupe espacio disponible */
 }
 
 .valoracion {
     font-size: 0.9rem;
     color: #6c757d;
-    margin-bottom: 1.2em;
+    margin-top: auto; /* Empuja valoración y botón hacia abajo */
+    padding-top: 1em; /* Espacio antes de la valoración */
     display: flex; /* Para alinear estrellas y texto */
     align-items: center;
+    flex-wrap: wrap; /* Permite que las opiniones pasen abajo si no caben */
 }
 .valoracion span:first-child { /* Estrellas */
     color: #ffc107; /* Amarillo/oro para estrellas */
@@ -260,6 +278,7 @@ main {
 }
 .valoracion .opiniones {
     font-size: 0.85rem;
+    white-space: nowrap; /* Evita que el texto de opiniones se parta */
 }
 
 
@@ -271,9 +290,11 @@ main {
     border-radius: 4px;
     font-size: 0.9rem;
     font-weight: 700;
-    text-align: center;
+    text-align: left; /* Alineado a la izquierda dentro de su espacio */
     border: 1px solid transparent; /* Borde invisible para mantener tamaño */
     transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    margin-top: 1em; /* Espacio sobre el botón */
+    align-self: flex-start; /* Alinea el botón a la izquierda */
 }
 
 .ver-mas:hover {
@@ -294,6 +315,7 @@ footer {
 
 footer ul {
     margin-top: 1rem;
+    padding-left: 0; /* Quita padding por defecto de ul */
 }
 
 footer ul li {
@@ -311,50 +333,6 @@ footer ul li a:hover {
 }
 
 
-/* --- Media Queries (Ajustes menores pueden ser necesarios) --- */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        margin-top: 1rem;
-        justify-content: center;
-    }
-
-    header nav ul li {
-        margin: 0 1rem; /* Ajuste margen */
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-    .filtros {
-        flex-direction: column;
-        align-items: stretch; /* Elementos ocupan todo el ancho */
-    }
-     .filtros input[type="search"] {
-        max-width: none; /* Ancho completo en móvil */
-    }
-}
-
-@media (max-width: 480px) {
-     .grid-emprendimientos {
-        grid-template-columns: 1fr; /* Una columna en móviles */
-        gap: 1.5rem;
-     }
-     header nav ul li {
-        margin: 0 0.6rem; /* Menos margen en móvil */
-    }
-    .hero {
-        padding: 3rem 0;
-    }
-    main {
-        padding: 2rem 0;
-    }
-}
-
 /* --- Forms (Login & Register) --- */
 
 /* Contenedor para centrar el formulario en la página */
@@ -362,9 +340,9 @@ footer ul li a:hover {
     padding-top: 3rem;
     padding-bottom: 3rem;
     min-height: calc(100vh - 160px); /* Ajustar basado en altura de header/footer si es necesario */
-    display: flex; /* Para centrar verticalmente si es necesario */
-    align-items: center; /* Centra verticalmente el form-container */
-    justify-content: center; /* Centra horizontalmente el form-container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form-container {
@@ -421,6 +399,7 @@ footer ul li a:hover {
 
 textarea.form-control {
     min-height: 80px; /* Altura mínima para textarea */
+    resize: vertical; /* Permite redimensionar verticalmente */
 }
 
 /* Estilos específicos para checkbox de términos */
@@ -433,11 +412,13 @@ textarea.form-control {
     margin-right: 0.75rem;
     width: 1em; /* Tamaño checkbox */
     height: 1em;
+    flex-shrink: 0; /* Evita que el checkbox se encoja */
 }
 .form-group.terms label {
     margin-bottom: 0; /* Quita margen inferior del label */
     font-weight: 400; /* Peso normal */
     font-size: 0.9rem;
+    line-height: 1.4; /* Mejora espaciado si el texto es largo */
 }
 .form-group.terms label a {
     text-decoration: underline;
@@ -490,9 +471,60 @@ textarea.form-control {
     text-decoration: underline;
 }
 
-/* Estilo para el enlace activo en la navegación */
-header nav ul li a.active {
- color: #007bff;
- border-bottom-color: #007bff;
- font-weight: 700; /* Opcional: hacerlo negrita */
+
+/* --- Media Queries (Ajustes menores pueden ser necesarios) --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem; /* Espacio entre logo y nav en móvil */
+    }
+
+    header nav ul {
+        margin-top: 0; /* Quitamos margen superior */
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin-left: 1rem; /* Ajuste margen */
+        margin-right: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    .filtros {
+        flex-direction: column;
+        align-items: stretch; /* Elementos ocupan todo el ancho */
+    }
+     .filtros input[type="search"] {
+        max-width: none; /* Ancho completo en móvil */
+    }
+}
+
+@media (max-width: 480px) {
+     .grid-emprendimientos {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 1.5rem;
+     }
+     header nav ul li {
+        margin: 0 0.6rem; /* Menos margen en móvil */
+    }
+    .hero {
+        padding: 3rem 0;
+    }
+    main {
+        padding: 2rem 0;
+    }
+     /* Ajustar tamaño del logo en móviles si es necesario */
+    .logo-img {
+        max-height: 40px;
+    }
+    .form-container {
+        padding: 1.5rem; /* Menos padding en móviles */
+    }
+    .filtros {
+        padding: 0.8rem 1rem;
+    }
 }
