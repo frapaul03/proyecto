@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Emprendimientos Locales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Emprendimientos Locales</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#explorar">Explorar</a></li>
+                    <li><a href="register.html" class="active">Registrar</a></li> <li><a href="login.html">Ingresar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-container"> 
+        <div class="form-container"> 
+            <h2>Registra tu Emprendimiento</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nombre_negocio">Nombre del Negocio</label>
+                    <input type="text" id="nombre_negocio" name="nombre_negocio" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre_contacto">Nombre de Contacto</label>
+                    <input type="text" id="nombre_contacto" name="nombre_contacto" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email_register">Correo Electrónico</label>
+                    <input type="email" id="email_register" name="email_register" class="form-control" required>
+                </div>
+                 <div class="form-group">
+                    <label for="telefono">Teléfono (Opcional)</label>
+                    <input type="tel" id="telefono" name="telefono" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password_register">Contraseña</label>
+                    <input type="password" id="password_register" name="password_register" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password_confirm">Confirmar Contraseña</label>
+                    <input type="password" id="password_confirm" name="password_confirm" class="form-control" required>
+                </div>
+                 <div class="form-group">
+                    <label for="descripcion">Descripción Breve de tu Negocio (Opcional)</label>
+                    <textarea id="descripcion" name="descripcion" class="form-control" rows="3"></textarea>
+                </div>
+                 <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Acepto los <a href="#">Términos y Condiciones</a></label>
+                </div>
+                <button type="submit" class="form-button">Registrarme</button>
+                <p class="form-switch">¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Plataforma Emprendimientos Locales. Todos los derechos reservados.</p>
+            <ul>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

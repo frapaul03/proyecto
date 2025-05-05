@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Emprendimientos Locales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Emprendimientos Locales</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#explorar">Explorar</a></li>
+                    <li><a href="register.html">Registrar</a></li>
+                    <li><a href="login.html" class="active">Ingresar</a></li> </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-container"> 
+        <div class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <form action="#" method="post"> 
+                <div class="form-group">
+                    <label for="email_login">Correo Electrónico</label>
+                    <input type="email" id="email_login" name="email_login" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password_login">Contraseña</label>
+                    <input type="password" id="password_login" name="password_login" class="form-control" required>
+                </div>
+                <div class="form-group form-options">
+                   <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit" class="form-button">Ingresar</button>
+                <p class="form-switch">¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Plataforma Emprendimientos Locales. Todos los derechos reservados.</p>
+            <ul>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
