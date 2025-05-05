@@ -354,3 +354,145 @@ footer ul li a:hover {
         padding: 2rem 0;
     }
 }
+
+/* --- Forms (Login & Register) --- */
+
+/* Contenedor para centrar el formulario en la página */
+.page-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    min-height: calc(100vh - 160px); /* Ajustar basado en altura de header/footer si es necesario */
+    display: flex; /* Para centrar verticalmente si es necesario */
+    align-items: center; /* Centra verticalmente el form-container */
+    justify-content: center; /* Centra horizontalmente el form-container */
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 2.5rem; /* Más padding interno */
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07); /* Sombra suave */
+    max-width: 500px; /* Ancho máximo del formulario */
+    width: 100%; /* Ocupa el ancho disponible hasta el max-width */
+    margin: 2rem auto; /* Margen arriba/abajo */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 2rem; /* Más espacio bajo el título */
+    font-weight: 700;
+    color: #343a40;
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Espacio entre campos */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+/* Estilo general para inputs y textarea */
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+textarea.form-control {
+    min-height: 80px; /* Altura mínima para textarea */
+}
+
+/* Estilos específicos para checkbox de términos */
+.form-group.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.form-group.terms input[type="checkbox"] {
+    margin-right: 0.75rem;
+    width: 1em; /* Tamaño checkbox */
+    height: 1em;
+}
+.form-group.terms label {
+    margin-bottom: 0; /* Quita margen inferior del label */
+    font-weight: 400; /* Peso normal */
+    font-size: 0.9rem;
+}
+.form-group.terms label a {
+    text-decoration: underline;
+}
+
+/* Opciones como 'olvidaste contraseña' */
+.form-options {
+    text-align: right;
+    margin-top: -0.5rem; /* Acercar al campo anterior */
+    margin-bottom: 1.5rem;
+}
+.form-options a {
+    font-size: 0.85rem;
+}
+
+
+/* Botón del formulario */
+.form-button {
+    display: block; /* Ocupa todo el ancho */
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: center;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Enlace para cambiar entre login/registro */
+.form-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+.form-switch a {
+    font-weight: 700;
+    color: #007bff;
+}
+.form-switch a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el enlace activo en la navegación */
+header nav ul li a.active {
+ color: #007bff;
+ border-bottom-color: #007bff;
+ font-weight: 700; /* Opcional: hacerlo negrita */
+}
