@@ -528,3 +528,19 @@ textarea.form-control {
         padding: 0.8rem 1rem;
     }
 }
+/* Modo Oscuro */
+body.oscuro {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .oscuro header,
+  .oscuro footer {
+    background-color: #1c1c1c;
+  }
+  
+  .oscuro .grid-emprendimientos .card-emprendimiento {
+    background-color: #333333;
+    border: 1px solid #444444;
+  }
+  
